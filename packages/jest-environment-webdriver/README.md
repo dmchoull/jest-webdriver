@@ -1,5 +1,9 @@
 # jest-environment-webdriver
 
+**Sway-specific fork of the project!**
+
+**Contains PRs [3](https://github.com/alexeyraspopov/jest-webdriver/pull/3) and [4](https://github.com/alexeyraspopov/jest-webdriver/pull/4).**
+
 Connect [Jest](http://facebook.github.io/jest/) tests to [Selenium WebDriver](http://www.seleniumhq.org/projects/webdriver/).
 
     npm install --save-dev jest-environment-webdriver
