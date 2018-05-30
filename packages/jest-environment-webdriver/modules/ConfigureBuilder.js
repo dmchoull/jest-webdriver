@@ -1,3 +1,13 @@
+/**
+ * @param {Options} browserOptions
+ * @param {[string, string][]} preferences
+ */
+function setOptionPreferences(browserOptions, preferences) {
+    for (const [key, value] of preferences) {
+        browserOptions.setPreference(key, value);
+    }
+}
+
 function setChromeOptions(builder, options) {
     const seleniumChrome = require('selenium-webdriver/chrome');
 
@@ -9,6 +19,10 @@ function setChromeOptions(builder, options) {
 
     if (options.headless) {
         chromeOptions.headless();
+    }
+
+    if (options.preferences) {
+        setOptionPreferences(firefoxOptions, options.preferences);
     }
 
     builder.setChromeOptions(chromeOptions);
@@ -27,6 +41,10 @@ function setEdgeOptions(builder, options) {
         edgeOptions.headless();
     }
 
+    if (options.preferences) {
+        setOptionPreferences(firefoxOptions, options.preferences);
+    }
+
     builder.setEdgeOptions(edgeOptions);
 }
 
@@ -41,6 +59,10 @@ function setFirefoxOptions(builder, options) {
 
     if (options.headless) {
         firefoxOptions.headless();
+    }
+
+    if (options.preferences) {
+        setOptionPreferences(firefoxOptions, options.preferences);
     }
 
     builder.setFirefoxOptions(firefoxOptions);
@@ -59,6 +81,10 @@ function setIeOptions(builder, options) {
         ieOptions.headless();
     }
 
+    if (options.preferences) {
+        setOptionPreferences(firefoxOptions, options.preferences);
+    }
+
     builder.setIeOptions(ieOptions);
 }
 
@@ -73,6 +99,10 @@ function setSafariOptions(builder, options) {
 
     if (options.headless) {
         safariOptions.headless();
+    }
+
+    if (options.preferences) {
+        setOptionPreferences(firefoxOptions, options.preferences);
     }
 
     builder.setSafariOptions(safariOptions);
