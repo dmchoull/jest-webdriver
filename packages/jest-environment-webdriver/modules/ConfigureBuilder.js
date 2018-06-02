@@ -3,129 +3,149 @@
  * @param {[string, string][]} preferences
  */
 function setOptionPreferences(browserOptions, preferences) {
-    for (const [key, value] of preferences) {
-        browserOptions.setPreference(key, value);
-    }
+  for (const [key, value] of preferences) {
+    browserOptions.setPreference(key, value);
+  }
 }
 
 function setChromeOptions(builder, options) {
-    const seleniumChrome = require('selenium-webdriver/chrome');
+  const seleniumChrome = require('selenium-webdriver/chrome');
 
-    if (options.driver) {
-        builder.setChromeService(new seleniumChrome.ServiceBuilder(options.driver));
-    }
+  if (options.capabilities) {
+    builder.withCapabilities(options.capabilities);
+  }
 
-    const chromeOptions = new seleniumChrome.Options();
+  if (options.driver) {
+    builder.setChromeService(new seleniumChrome.ServiceBuilder(options.driver));
+  }
 
-    if (options.headless) {
-        chromeOptions.headless();
-    }
+  const chromeOptions = new seleniumChrome.Options();
 
-    if (options.preferences) {
-        setOptionPreferences(firefoxOptions, options.preferences);
-    }
+  if (options.headless) {
+    chromeOptions.headless();
+  }
 
-    builder.setChromeOptions(chromeOptions);
+  if (options.preferences) {
+    setOptionPreferences(firefoxOptions, options.preferences);
+  }
+
+  builder.setChromeOptions(chromeOptions);
 }
 
 function setEdgeOptions(builder, options) {
-    const seleniumEdge = require('selenium-webdriver/edge');
+  const seleniumEdge = require('selenium-webdriver/edge');
 
-    if (options.driver) {
-        builder.setEdgeService(new seleniumEdge.ServiceBuilder(options.driver));
-    }
+  if (options.capabilities) {
+    builder.withCapabilities(options.capabilities);
+  }
 
-    const edgeOptions = new seleniumEdge.Options();
+  if (options.driver) {
+    builder.setEdgeService(new seleniumEdge.ServiceBuilder(options.driver));
+  }
 
-    if (options.headless) {
-        edgeOptions.headless();
-    }
+  const edgeOptions = new seleniumEdge.Options();
 
-    if (options.preferences) {
-        setOptionPreferences(firefoxOptions, options.preferences);
-    }
+  if (options.headless) {
+    edgeOptions.headless();
+  }
 
-    builder.setEdgeOptions(edgeOptions);
+  if (options.preferences) {
+    setOptionPreferences(firefoxOptions, options.preferences);
+  }
+
+  builder.setEdgeOptions(edgeOptions);
 }
 
 function setFirefoxOptions(builder, options) {
-    const seleniumFirefox = require('selenium-webdriver/firefox');
+  const seleniumFirefox = require('selenium-webdriver/firefox');
 
-    if (options.driver) {
-        builder.setFirefoxService(new seleniumFirefox.ServiceBuilder(options.driver));
-    }
+  if (options.capabilities) {
+    builder.withCapabilities(options.capabilities);
+  }
 
-    const firefoxOptions = new seleniumFirefox.Options();
+  if (options.driver) {
+    builder.setFirefoxService(new seleniumFirefox.ServiceBuilder(options.driver));
+  }
 
-    if (options.headless) {
-        firefoxOptions.headless();
-    }
+  const firefoxOptions = new seleniumFirefox.Options();
 
-    if (options.preferences) {
-        setOptionPreferences(firefoxOptions, options.preferences);
-    }
+  if (options.headless) {
+    firefoxOptions.headless();
+  }
 
-    builder.setFirefoxOptions(firefoxOptions);
+  if (options.preferences) {
+    setOptionPreferences(firefoxOptions, options.preferences);
+  }
+
+  builder.setFirefoxOptions(firefoxOptions);
 }
 
 function setIeOptions(builder, options) {
-    const seleniumIe = require('selenium-webdriver/ie');
+  const seleniumIe = require('selenium-webdriver/ie');
 
-    if (options.driver) {
-        builder.setIeService(new seleniumIe.ServiceBuilder(options.driver));
-    }
+  if (options.capabilities) {
+    builder.withCapabilities(options.capabilities);
+  }
 
-    const ieOptions = new seleniumIe.Options();
+  if (options.driver) {
+    builder.setIeService(new seleniumIe.ServiceBuilder(options.driver));
+  }
 
-    if (options.headless) {
-        ieOptions.headless();
-    }
+  const ieOptions = new seleniumIe.Options();
 
-    if (options.preferences) {
-        setOptionPreferences(firefoxOptions, options.preferences);
-    }
+  if (options.headless) {
+    ieOptions.headless();
+  }
 
-    builder.setIeOptions(ieOptions);
+  if (options.preferences) {
+    setOptionPreferences(firefoxOptions, options.preferences);
+  }
+
+  builder.setIeOptions(ieOptions);
 }
 
 function setSafariOptions(builder, options) {
-    const seleniumSafari = require('selenium-webdriver/safari');
+  const seleniumSafari = require('selenium-webdriver/safari');
 
-    if (options.driver) {
-        builder.setSafariService(new seleniumSafari.ServiceBuilder(options.driver));
-    }
+  if (options.capabilities) {
+    builder.withCapabilities(options.capabilities);
+  }
 
-    const safariOptions = new seleniumSafari.Options();
+  if (options.driver) {
+    builder.setSafariService(new seleniumSafari.ServiceBuilder(options.driver));
+  }
 
-    if (options.headless) {
-        safariOptions.headless();
-    }
+  const safariOptions = new seleniumSafari.Options();
 
-    if (options.preferences) {
-        setOptionPreferences(firefoxOptions, options.preferences);
-    }
+  if (options.headless) {
+    safariOptions.headless();
+  }
 
-    builder.setSafariOptions(safariOptions);
+  if (options.preferences) {
+    setOptionPreferences(firefoxOptions, options.preferences);
+  }
+
+  builder.setSafariOptions(safariOptions);
 }
 
 module.exports.setBuilderBrowserOptions = function (builder, browserOptions) {
-    if (browserOptions.chrome) {
-        setChromeOptions(builder, browserOptions.chrome);
-    }
+  if (browserOptions.chrome) {
+    setChromeOptions(builder, browserOptions.chrome);
+  }
 
-    if (browserOptions.edge) {
-        setEdgeOptions(builder, browserOptions.edge);
-    }
+  if (browserOptions.edge) {
+    setEdgeOptions(builder, browserOptions.edge);
+  }
 
-    if (browserOptions.firefox) {
-        setFirefoxOptions(builder, browserOptions.firefox);
-    }
+  if (browserOptions.firefox) {
+    setFirefoxOptions(builder, browserOptions.firefox);
+  }
 
-    if (browserOptions.ie) {
-        setIeOptions(builder, browserOptions.ie);
-    }
+  if (browserOptions.ie) {
+    setIeOptions(builder, browserOptions.ie);
+  }
 
-    if (browserOptions.safari) {
-        setSafariOptions(builder, browserOptions.safari);
-    }
+  if (browserOptions.safari) {
+    setSafariOptions(builder, browserOptions.safari);
+  }
 }
