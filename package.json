@@ -1,5 +1,5 @@
 {
-  "name": "jest-webdriver-sway-fork",
+  "name": "jest-webdriver",
   "private": true,
   "dependencies": {
     "jest": "^22.4.3",
