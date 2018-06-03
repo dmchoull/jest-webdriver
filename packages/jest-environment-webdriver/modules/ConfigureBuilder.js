@@ -80,30 +80,6 @@ function setFirefoxOptions(builder, options) {
   builder.setFirefoxOptions(firefoxOptions);
 }
 
-function setIeOptions(builder, options) {
-  const seleniumIe = require('selenium-webdriver/ie');
-
-  if (options.capabilities) {
-    builder.withCapabilities(options.capabilities);
-  }
-
-  if (options.driver) {
-    builder.setIeService(new seleniumIe.ServiceBuilder(options.driver));
-  }
-
-  const ieOptions = new seleniumIe.Options();
-
-  if (options.headless) {
-    ieOptions.headless();
-  }
-
-  if (options.preferences) {
-    setOptionPreferences(firefoxOptions, options.preferences);
-  }
-
-  builder.setIeOptions(ieOptions);
-}
-
 function setSafariOptions(builder, options) {
   const seleniumSafari = require('selenium-webdriver/safari');
 
@@ -139,10 +115,6 @@ module.exports.setBuilderBrowserOptions = function (builder, browserOptions) {
 
   if (browserOptions.firefox) {
     setFirefoxOptions(builder, browserOptions.firefox);
-  }
-
-  if (browserOptions.ie) {
-    setIeOptions(builder, browserOptions.ie);
   }
 
   if (browserOptions.safari) {
