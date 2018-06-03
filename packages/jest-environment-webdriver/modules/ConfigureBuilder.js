@@ -45,10 +45,6 @@ function setEdgeOptions(builder, options) {
 
   const edgeOptions = new seleniumEdge.Options();
 
-  if (options.headless) {
-    edgeOptions.headless();
-  }
-
   if (options.preferences) {
     setOptionPreferences(firefoxOptions, options.preferences);
   }
@@ -92,10 +88,6 @@ function setSafariOptions(builder, options) {
   }
 
   const safariOptions = new seleniumSafari.Options();
-
-  if (options.headless) {
-    safariOptions.headless();
-  }
 
   if (options.preferences) {
     setOptionPreferences(firefoxOptions, options.preferences);
