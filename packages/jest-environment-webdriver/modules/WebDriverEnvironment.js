@@ -9,7 +9,6 @@ class WebDriverEnvironment extends NodeEnvironment {
     const options = config.testEnvironmentOptions || {};
     this.browserName = options.browser || 'chrome';
     this.browserOptions = options.browserOptions || {};
-    this.drivers = options.drivers || {};
     this.seleniumAddress = options.seleniumAddress || null;
   }
 
