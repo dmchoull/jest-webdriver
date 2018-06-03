@@ -2,10 +2,6 @@
 
 Connect [Jest][1] tests to [Selenium WebDriver][2].
 
-**Sway-specific fork of the project!**
-
-**Contains PRs [3](https://github.com/alexeyraspopov/jest-webdriver/pull/3) and [4](https://github.com/alexeyraspopov/jest-webdriver/pull/4).**
-
 ## Limitations
 
 The project is in progress. It only supports running [preinstalled][3] WebDrivers (Chrome, Safari, Firefox, Edge, IE) without additional options. Capabilities configuration will be added soon. Pull requests welcomed.
