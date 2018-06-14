@@ -37,7 +37,15 @@ class WebDriverEnvironment extends NodeEnvironment {
   }
 
   async teardown() {
-    await this.driver.quit();
+    if (this.driver) {
+      await this.driver.close();
+
+      // https://github.com/mozilla/geckodriver/issues/1151
+      try {
+        await this.driver.quit();
+      } catch (error) { }
+    }
+
     await super.teardown();
   }
 }
