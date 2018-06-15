@@ -1,6 +1,6 @@
 {
-  "name": "jest-screenshot-reporter",
-  "version": "0.1.0",
+  "name": "jest-screenshot-reporter-sway-fork",
+  "version": "0.1.1",
   "description": "Capture screenshots for failed tests on Selenium WebDriver",
   "author": "Alexey Raspopov",
   "license": "MIT",
@@ -21,6 +21,6 @@
     "jest": "^22.1.4"
   },
   "engines": {
-    "node": "^8.x"
+    "node": ">=8.x"
   }
 }
