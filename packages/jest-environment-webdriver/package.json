@@ -1,6 +1,6 @@
 {
   "name": "jest-environment-webdriver-sway-fork",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Use Jest to run tests in Selenium WebDriver",
   "author": "Alexey Raspopov",
   "license": "MIT",
