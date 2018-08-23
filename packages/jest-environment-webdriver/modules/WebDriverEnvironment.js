@@ -15,7 +15,7 @@ class WebDriverEnvironment extends NodeEnvironment {
   async setup() {
     await super.setup();
     
-    const builder = new Builder();
+    let builder = new Builder();
 
     setBuilderBrowserOptions(builder, this.browserOptions);
 
