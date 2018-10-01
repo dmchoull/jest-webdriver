@@ -26,7 +26,7 @@ function setChromeOptions(builder, options) {
   }
 
   if (options.preferences) {
-    setOptionPreferences(firefoxOptions, options.preferences);
+    setOptionPreferences(chromeOptions, options.preferences);
   }
 
   builder.setChromeOptions(chromeOptions);
@@ -46,7 +46,7 @@ function setEdgeOptions(builder, options) {
   const edgeOptions = new seleniumEdge.Options();
 
   if (options.preferences) {
-    setOptionPreferences(firefoxOptions, options.preferences);
+    setOptionPreferences(edgeOptions, options.preferences);
   }
 
   builder.setEdgeOptions(edgeOptions);
@@ -90,7 +90,7 @@ function setSafariOptions(builder, options) {
   const safariOptions = new seleniumSafari.Options();
 
   if (options.preferences) {
-    setOptionPreferences(firefoxOptions, options.preferences);
+    setOptionPreferences(safariOptions, options.preferences);
   }
 
   builder.setSafariOptions(safariOptions);
